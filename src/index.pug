@@ -1,0 +1,41 @@
+include ./mixins.pug
+
+<!DOCTYPE html>
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible", content="ie=edge")
+    title Portfolio | main page
+  body
+    .wrapper
+      .maincontent
+      
+      .hero_and_user_sec
+        .parallax
+          +image('parallax/5.png', 'layers layer_5')
+          +image('parallax/4.png', 'layers layer_4')
+          +image('parallax/3.png', 'layers layer_3')
+          +image('parallax/2.png', 'layers layer_2')
+          +image('parallax/1.png', 'layers layer_1')
+          .bg-layer
+        include ./sections/sec_hero.pug
+        include ./sections/sec_user.pug
+
+      include ./sections/sec_skills.pug
+
+      include ./sections/sec_slider.pug
+      
+      .comment_and_form
+        include ./sections/sec_comment.pug
+        include ./sections/sec_form.pug
+
+      include ./sections/sec_footer.pug
+
+
+
+      include ./sections/modals.pug
+
+    include ./templates/entry.pug  
+
+         

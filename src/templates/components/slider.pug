@@ -1,0 +1,70 @@
+script(type="text/x-template")#slider-container
+  .slider
+    display( 
+    :currentSlide="currentSlide"
+    :slider="slider"
+    :currentIndex="currentIndex"
+    @slide="handleSlide" )
+             
+    info( :currentSlide="currentSlide" )
+
+
+
+
+//- DISPLAY
+script(type="text/x-template")#slider-display
+  .slider__cont    
+    span.slider-count {{currentIndex + 1}}     
+    .slider__cont-box
+      .slider__list
+        .slider__slide
+          img(:src="currentSlide.photo").slides.slides-img  
+
+    btns(@slide="$emit('slide', $event)") 
+    
+    pagination(
+      :slider="slider"
+      :currentSlide="currentSlide"
+      )
+
+
+
+
+script(type="text/x-template")#slider-btns
+  .slider__btns          
+    button(@click.prevent="$emit('slide', 'next')").slider__btns-box.next
+      +icon('arrow', 'slider__arrow slider__arrow_right')  
+    button(@click.prevent="$emit('slide', 'prev')").slider__btns-box.prev
+      +icon('arrow', 'slider__arrow slider__arrow_left')    
+
+
+
+script(type="text/x-template")#slider-pagination
+  .slider__pag-wrap
+    .slider__pag
+      .slider__pag-point(
+        v-for="slide in slider" 
+        :key="slide.id"
+        :class="{active: currentSlide.id === slide.id}"
+      )
+        img(:src="slide.photo").slides.slides-pag
+
+
+
+
+//- INFO
+script(type="text/x-template")#slider-info
+  .slider__info
+    tags( :tags="tagsArray")
+    h4.title.slider__title {{currentSlide.title}}
+    p.text.slider__text  {{currentSlide.desc}}
+    .slider__info-box
+      a(:href="currentSlide.link" target="blank").slider__src Посмотреть сайт
+        +icon('link', 'site-link') 
+
+
+
+script(type="text/x-template")#slider-tags
+  .tags
+    .tags__el(v-for="tag in tags" :key="tag")
+      .tag {{tag}}

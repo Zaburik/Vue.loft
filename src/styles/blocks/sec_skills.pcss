@@ -1,0 +1,206 @@
+.skill-sec{
+	background-color: #222;
+	min-height: 1000px;
+	display:flex;
+	flex-direction:column;
+	justify-content:center;
+	background: url(~images/content/progress_fon.jpg) no-repeat bottom;
+	background-size:cover;
+	position: relative;	
+	padding-top: 120px;
+	padding-bottom: 50px;
+
+	z-index: 1;
+
+
+	&::before{
+		content:'';
+		z-index: 2;
+		position: absolute;
+		top: 0;left: 0;
+		width: 100%; height: 100%;
+
+		background: radial-gradient(circle at center bottom, rgba(27,31,34,0.7585637282256652) 0%, rgba(27,31,34,1) 74%, rgba(27,31,34,1) 100%);
+
+	}
+
+	@include tablets {
+		padding-bottom: 330px;
+	}
+}
+
+
+
+.hand {
+	width: 38%; height:auto;
+	position: absolute;
+	bottom: -45px;left: 0;
+	z-index:3;
+	pointer-events: none;
+
+	@include tablets{
+		top: auto;left: auto;
+		transform: rotate(-90deg) translateY(-50%);
+		left: 60%;bottom: -73px;
+		width: 330px; height: auto;
+
+	}
+}
+
+
+.skill-sec__cont{
+	display:grid;
+	grid-template-columns:repeat(12, 1fr);
+	z-index: 5;
+}
+
+
+
+
+
+/* ISKILL_SEC_INFO */
+
+
+
+.skill-sec__info{
+	grid-column:5/span 5;
+	margin-bottom: 100px;
+
+	@include desktop {
+		grid-column:5/span 6;
+	}
+
+	@include tablets {
+		grid-column:3/span 8;
+		text-align:center;
+	}
+
+
+	@include phones {
+		grid-column:1/all;
+		text-align:center;
+  	}
+
+
+}
+
+
+
+.skills-sec__widget{
+	grid-column:6/span 7;
+
+	@include tablets {
+		grid-column:3/span 9;
+	}
+
+	@include phones {
+		grid-column:1/all;
+		text-align:center;
+  	}
+}
+
+.skills{
+	width: 100%;
+}
+
+
+
+.skills__block{
+	display:flex;
+	flex-direction:column;
+}
+
+
+.skills-row__title{
+	margin-bottom: 45px;
+	color:white;
+	line-height: 48px;
+	font-size: 24px;
+	font-weight: 600;
+}
+
+
+
+.skills-list{
+	display:flex;
+	justify-content:space-between;
+	flex-wrap:wrap;
+
+	@include phones {
+		justify-content:space-around;
+  	}
+}
+
+
+
+.skills-list__el{
+	width: 150px;
+	height: 150px;
+	margin: 0px  30px 50px 0px;
+	position: relative;
+
+	@include desktop {
+		width: 130px; height: 130px;
+	}
+
+	@include tablets {
+		width: 110px; height: 110px;
+	}
+}
+
+
+
+
+
+
+
+
+.skill{
+	width: 100%; height: 100%;
+	position: relative;
+}
+
+
+
+
+.skill-name{
+	font-size: 18px;
+	line-height: 25px;
+	text-align:center;
+	color:$white;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+
+	@include tablets {
+		font-size:14px;
+	}
+}
+
+
+
+
+
+
+
+
+/* SVG */
+
+
+
+
+.skill__circle {
+  fill: transparent;
+  &_under {
+    stroke: rgb(63,61,59);
+    stroke-width: 3px;
+  }
+  &_above {
+    stroke-width: 8px;
+    stroke-dasharray: 251;
+    stroke-dashoffset: 100;
+  	transform-origin: center;
+  	transform:rotate(-90deg);
+  }
+}

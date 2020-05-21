@@ -1,0 +1,178 @@
+
+
+
+/*COMMENT AND FORM */
+
+
+
+/* Код большой секции в файле comment_block */
+
+
+
+/* FORM */
+
+.form-sec{
+	grid-column:1/span 7;
+
+	@include desktop{
+		grid-column:1/span 9;
+	}
+
+	@include tablets{
+		grid-column:1/all;
+	}
+}
+
+.form__title{
+
+	@include tablets{
+		text-align:center;
+	}
+}
+
+
+.form__row{
+	width: 100%;
+	margin-bottom: 40px;
+	display:flex;
+
+	@include phones {
+		flex-direction:column;
+  	}
+}
+
+
+.form__box{
+	width: 45%;
+	position: relative;	
+	flex:1;
+
+	@include phones {
+		width: 100%;
+		margin-bottom: 30px;
+  	}
+
+	&::after{
+		content:'';
+		transition:0.5s;
+		display:block;
+		width: 100%; height: 2px;
+		background-color:#EB8C00;
+		position: absolute;
+		left: 0; bottom:0;
+		transform:scaleX(0);
+	}
+
+}
+
+.form__box-margin{
+	margin-right: 80px;
+}
+
+
+
+.form__inp-icon{
+	width: 35px; height: 35px;
+	fill:$white;
+	position: absolute;
+	left: 0;top: 50%;
+}
+
+
+
+
+.form__inp{
+	display:block;
+	width: 100%;
+	padding: 0px 0 25px 50px;
+	font-size:20px;
+	background-color:transparent;
+	border-color:transparent;
+	border-bottom:2px solid #7D7C79;
+	color:#fff; 
+	outline:none;
+	transition:0.7s;
+	line-height: 16px;
+}
+
+
+
+
+
+
+.form__message{
+	display:block;
+	width: 100%;
+	min-height: 120px;
+	max-height: 200px;
+	padding: 0px 0 5px 50px;
+	font-size:20px;
+	background-color:transparent;
+	border-color:transparent;
+	border-bottom:2px solid #7D7C79;
+	color:#fff; 
+	outline:none;
+	resize: none;
+	padding-top: 25px;
+}
+
+
+
+.form__text{
+	padding-left: 50px;
+	margin-bottom: 30px;
+}
+
+
+
+.m_t{
+	margin-bottom: 0;
+	padding-top: 40px;
+}
+
+.btn{
+	padding: 25px 100px;
+	background: linear-gradient(143deg, rgba(212,114,3,1) 0%, rgba(242,148,0,1) 100%);
+	color:white;
+	font-size:20px;
+	text-transform:uppercase;
+	font-weight:bold;
+	outline:none;
+	border-radius:5px;
+	letter-spacing: 2px;
+
+	@include tablets{
+		margin: 0 auto;
+	}
+
+	 @include phones {
+	 	padding: 20px 80px;
+    }
+}
+
+
+
+ 
+
+
+/* 
+ACTIVE_CLASS
+ */
+
+
+
+.form_cursor{
+
+	&::after{
+		transform:scaleX(1);
+	}
+
+	.form__inp-icon{
+		fill:$orange;
+	}
+}
+
+
+
+
+

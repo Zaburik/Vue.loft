@@ -1,0 +1,202 @@
+
+
+
+/* USER_SECTION */
+
+
+
+
+.user{
+	padding: 180px 0 100px 0;
+	min-height: 700px;
+	z-index: 10;
+}
+
+.user-cont{
+	display: grid;
+	grid-template-columns: repeat(12, 1fr);
+	z-index: 10;
+}
+
+
+
+.user__wrap{
+	z-index: 10;
+	grid-column:3/span 8;
+	display: grid;
+	grid-template-columns: repeat(8, 1fr);
+
+	@include desktop {
+ 	   grid-column:2/span 10;
+  	}
+
+  	@include tablets {
+		grid-column:1/all;
+  	}
+
+  	@include phones {
+  		display:flex;
+  		flex-wrap:wrap;
+  	}
+
+}
+
+
+
+
+
+.user__left{
+	@include phones {
+		order:0;
+  	}
+}
+
+
+
+.user__right{
+	@include phones {
+		order:1;
+  	}
+}
+
+
+
+
+.user__left{
+	grid-column:1/span 3;
+	display:flex;
+	flex-direction: column;
+	margin-bottom: 80px;
+
+	@include phones {
+		width: 100%;
+  	}
+
+}
+
+
+.user__right{
+	grid-column:4/all;
+	display:flex;
+	flex-direction: column;
+	justify-content:space-evenly;
+	margin-bottom: 80px;
+	padding-left: 80px;
+
+	@include tablets {
+		padding-left: 40px;
+  	}
+
+  	@include phones {
+		width: 100%;
+		padding: 0;
+  	}
+
+}
+
+
+.user__img{
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+}
+
+.user-logo{
+	border-radius:50%;
+	width:210px;
+	height: 210px;
+	object-fit: cover;
+	object-position: center;
+	
+	@include tabt_usr {
+		width: 185px;
+		height: 185px;
+	}
+
+	@include phones {
+		width: 250px;
+		height: 250px;
+	}
+
+}
+
+
+
+.user-info__box{
+	display:flex;
+	justify-content:space-between;
+	font-size: 16px;
+	line-height: 30px;
+	
+	@include tabt_usr {
+		flex-direction:column;
+		margin-bottom: 15px;
+		text-align:center;
+	}
+
+	@include phones {
+		text-align:left;
+		flex-direction:row;
+		margin-bottom: 5px;
+	}
+}
+
+
+.user-info__headline{
+	@include tabt_usr {
+		text-align:left;
+	}
+}
+
+.user-info__headline,.user-info__text{
+	display:block;
+	font-weight: bold;
+	color:#404345;
+	width: 50%;
+
+	@include tabt_usr {
+		width: 100%;
+	}
+}
+
+.user-info__text{
+	color:white;
+}
+
+
+.text{
+	color:#A8A8A9;
+	font-size:16px;
+	line-height: 30px;
+	font-weight:600;
+
+}
+
+.name{
+	color:white;
+	font-size:36px;
+	line-height: 48px;
+	font-weight: bold;
+}
+
+
+.user-fix{
+	justify-content:flex-start;
+}
+
+
+.text_italic{
+	font-style:italic;
+	font-weight: normal;
+	position: relative;
+
+	&::before{
+		content:"*";
+		position: absolute;
+		left: -40px;top: -10px;
+		font-size: 48px;
+		line-height: 48px;
+		color: #3D1E21;
+	}
+}

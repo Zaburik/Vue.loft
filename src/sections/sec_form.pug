@@ -1,0 +1,20 @@
+.container.comment_and_form-cont                 
+  section.form-sec
+    h2.title.form__title Связаться со мной
+    form.form
+      .form__row
+        label.form__box.form__box-margin
+          p.text.form__text Введите ваше имя
+          input.form__inp
+          +icon('user','form__inp-icon')
+        label.form__box
+          p.text.form__text Введите ваш e-mail
+          input.form__inp
+          +icon('envelope','form__inp-icon')
+      .form__row
+        label.form__box
+          p.text.form__text.m_t Сообщение к письму
+          textarea.form__message
+          +icon('message','form__inp-icon') 
+      .form__row
+        button(type="submit").btn отправить 
